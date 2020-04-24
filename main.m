@@ -20,27 +20,27 @@ legend('Admitted', 'Not admitted', 'location', 'southwest');
 
 
 
-##% linear svm
-##% linear kernel matrix
-##K = X*X';
-##
-##C = 1;
-##model = trainSVM (K, X, y, C);
-##
-##% linear svm evaluation
-##predictions = predictSVM(X, model, 'linear');
-##fprintf('training set accuracy: %f\n', mean(double(predictions == y)) * 100);
-##
-##predVal = predictSVM(Xval, model, 'linear');
-##fprintf('validation set accuracy: %f\n', mean(double(predVal == yval)) * 100);
-##
-##predTest = predictSVM(Xtest, model, 'linear');
-##fprintf('test set accuracy: %f\n', mean(double(predTest == ytest)) * 100);
-##
-##figure 1
-##hold on
-##plotData(X, y);
-##plotLineBoundry (X, model.theta)
+% linear svm
+% linear kernel matrix
+K = X*X';
+
+C = 1;
+model = trainSVM (K, X, y, C);
+
+% linear svm evaluation
+predictions = predictSVM(X, model, 'linear');
+fprintf('training set accuracy: %f\n', mean(double(predictions == y)) * 100);
+
+predVal = predictSVM(Xval, model, 'linear');
+fprintf('validation set accuracy: %f\n', mean(double(predVal == yval)) * 100);
+
+predTest = predictSVM(Xtest, model, 'linear');
+fprintf('test set accuracy: %f\n', mean(double(predTest == ytest)) * 100);
+
+figure 1
+hold on
+plotData(X, y);
+plotLineBoundry (X, model.theta)
 
 
 
